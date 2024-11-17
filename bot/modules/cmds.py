@@ -96,7 +96,7 @@ async def add_task(client, message):
     if len(args := message.text.split()) <= 1:
         return await sendMessage(message, "<b>𝙽𝚘 𝙻𝚒𝚗𝚔 𝙵𝚘𝚞𝚗𝚍 𝚃𝚘 𝙰𝚍𝚍</b>")
     
-    Var.RSS_ITEMS.append(args[0])
+    Var.RSS_ITEMS.append(args[1])
     req_msg = await sendMessage(message, f"𝙶𝚕𝚘𝚋𝚊𝚕 𝙻𝚒𝚗𝚔 𝙰𝚍𝚍𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢!`\n\n    • **𝙰𝚕𝚕 𝙻𝚒𝚗𝚔(𝚜) :** {', '.join(Var.RSS_ITEMS)[:-2]}")
 
 @bot.on_message(command('addtask') & private & user(Var.ADMINS))
