@@ -192,7 +192,7 @@ class TextEditor:
     async def get_poster(self):
         if anime_id := await self.get_id():
             return f"https://img.anili.st/media/{anime_id}"
-        return "https://telegra.ph/file/112ec08e59e73b6189a20.jpg"
+        return "https://graph.org/file/4ea59438dc7f8d4174a7a-e4cd6c122503d8e755.jpg"
         
     @handle_logs
     async def get_upname(self, qual=""):
