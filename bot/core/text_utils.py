@@ -11,7 +11,7 @@ from .func_utils import handle_logs
 from .reporter import rep
 
 CAPTION_FORMAT = """
-<b>➤ {title}</b>
+<blockquote> <b>➤ {title}</b> </blockquote>
 <b>──────────────────────────</b>
 <b>➥ </b> <b>𝙶𝚎𝚗𝚛𝚎𝚜 : {genres}</b>
 <b>➥ </b> <b>𝚂𝚝𝚊𝚝𝚞𝚜 : 𝚁𝚎𝚕𝚎𝚊𝚜𝚒𝚗𝚐</b>
@@ -21,7 +21,7 @@ CAPTION_FORMAT = """
 <b>➥ </b> <b>𝚂𝚞𝚋𝚝𝚒𝚝𝚕𝚎 : 𝙴𝚗𝚐𝚕𝚒𝚜𝚑</b>
 <b>──────────────────────────</b>
 ──────────────────────────
-➤  <b>𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢</b> ➤ </b><b>{cred}</b>
+<blockquote>➤  <b>𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢</b> ➤ </b><b>{cred}</b></blockquote>
 ──────────────────────────
 """
 
