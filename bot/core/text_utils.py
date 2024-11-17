@@ -25,7 +25,7 @@ CAPTION_FORMAT = """
 ╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
 """
 
-GENRES_EMOJI = {"𝙰𝚌𝚝𝚒𝚘𝚗": "👊", "𝙰𝚍𝚟𝚊𝚗𝚝𝚞𝚛𝚎": choice(['🪂', '🧗‍♀']), "𝙲𝚘𝚖𝚎𝚍𝚢": "🤣", "𝙳𝚛𝚊𝚖𝚊": " 🎭", "𝙴𝚌𝚌𝚑𝚒": choice(['💋', '🥵']), "𝙵𝚊𝚗𝚝𝚊𝚜𝚢": choice(['🧞', '🧞‍♂', '🧞‍♀','🌗']), "𝙷𝚎𝚗𝚝𝚊𝚒": "🔞", "𝙷𝚘𝚛𝚛𝚘𝚛": "☠", "𝙼𝚊𝚑𝚘𝚞 𝚂𝚑𝚘𝚞𝚓𝚘": "☯", "𝙼𝚎𝚌𝚑𝚊": "🤖", "𝙼𝚞𝚜𝚒𝚌": "🎸", "𝙼𝚢𝚜𝚝𝚎𝚛𝚢": "🔮", "𝙿𝚜𝚢𝚌𝚑𝚘𝚕𝚘𝚐𝚒𝚌𝚊𝚕": "♟", "𝚁𝚘𝚖𝚊𝚗𝚌𝚎": "💞", "𝚂𝚌𝚒-𝙵𝚒": "🛸", "𝚂𝚕𝚒𝚌𝚎 𝙾𝚏 𝙻𝚒𝚏𝚎": choice(['☘','🍁']), "𝚂𝚙𝚘𝚛𝚝𝚜": "⚽️", "𝚂𝚞𝚙𝚎𝚛𝚗𝚊𝚝𝚞𝚛𝚊𝚕": "🫧", "𝚃𝚑𝚛𝚒𝚕𝚕𝚎𝚛": choice(['🥶', '🔪','🤯'])}
+GENRES_EMOJI = {"Action": "👊", "Adventure": choice(['🪂', '🧗‍♀']), "Comedy": "🤣", "Drama": " 🎭", "Ecchi": choice(['💋', '🥵']), "Fantasy": choice(['🧞', '🧞‍♂', '🧞‍♀','🌗']), "Hentai": "🔞", "Horror": "☠", "Mahou Shoujo": "☯", "Mecha": "🤖", "Music": "🎸", "Mystery": "🔮", "Psychological": "♟", "Romance": "💞", "Sci-Fi": "🛸", "Slice of Life": choice(['☘','🍁']), "Sports": "⚽️", "Supernatural": "🫧", "Thriller": choice(['🥶', '🔪','🤯'])}
 
 ANIME_GRAPHQL_QUERY = """
 query ($id: Int, $search: String, $seasonYear: Int) {
