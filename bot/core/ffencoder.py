@@ -52,12 +52,12 @@ class FFEncoder:
                 bar = floor(percent/8)*"█" + (12 - floor(percent/8))*"▒"
                 
                 progress_str = f"""<blockquote>‣ <b>Anime Name :</b> <b><i>{self.__name}</i></b></blockquote>
-<blockquote>‣ <b>Status :</b> <i>Encoding</i>
+<blockquote>‣ <b>𝚂𝚝𝚊𝚝𝚞𝚜 :</b> <i>Encoding</i>
     <code>[{bar}]</code> {percent}%</blockquote> 
 <blockquote>   ‣ <b>Size :</b> {convertBytes(ensize)} out of ~ {convertBytes(tsize)}
-    ‣ <b>Speed :</b> {convertBytes(speed)}/s
-    ‣ <b>Time Took :</b> {convertTime(diff)}
-    ‣ <b>Time Left :</b> {convertTime(eta)}</blockquote>
+    ‣ <b>𝚂𝚙𝚎𝚎𝚍 :</b> {convertBytes(speed)}/s
+    ‣ <b>𝚃𝚒𝚖𝚎 𝚃𝚘𝚘𝚔 :</b> {convertTime(diff)}
+    ‣ <b>𝚃𝚒𝚖𝚎 𝙻𝚎𝚏𝚝 :</b> {convertTime(eta)}</blockquote>
 <blockquote>‣ <b>File(s) Encoded:</b> <code>{Var.QUALS.index(self.__qual)} / {len(Var.QUALS)}</code></blockquote>"""
             
                 await editMessage(self.message, progress_str)
