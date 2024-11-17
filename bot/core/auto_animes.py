@@ -61,7 +61,7 @@ async def get_animes(name, torrent, force=False):
             #post_msg = await sendMessage(Var.MAIN_CHANNEL, (await aniInfo.get_caption()).format(await aniInfo.get_poster()), invert_media=True)
             
             await asleep(1.5)
-            stat_msg = await sendMessage(Var.MAIN_CHANNEL, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</blockquote>")
+            stat_msg = await sendMessage(Var.MAIN_CHANNEL, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote><b>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</b></blockquote>")
             dl = await TorDownloader("./downloads").download(torrent, name)
             if not dl or not ospath.exists(dl):
                 await rep.report(f"𝙵𝚒𝚕𝚎 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙸𝚗𝚌𝚘𝚖𝚙𝚕𝚎𝚝𝚎, 𝚃𝚛𝚢 𝙰𝚐𝚊𝚒𝚗", "𝙴𝚛𝚛𝚘𝚛")
@@ -72,7 +72,7 @@ async def get_animes(name, torrent, force=False):
             ffEvent = Event()
             ff_queued[post_id] = ffEvent
             if ffLock.locked():
-                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote>𝚀𝚞𝚎𝚞𝚎𝚍 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</blockquote>")
+                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote><b>𝚀𝚞𝚎𝚞𝚎𝚍 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</b></blockquote>")
                 await rep.report("𝙰𝚍𝚍𝚎𝚍 𝚃𝚊𝚜𝚔 𝚃𝚘 𝚀𝚞𝚎𝚞𝚎...", "𝙸𝚗𝚏𝚘")
             await ffQueue.put(post_id)
             await ffEvent.wait()
@@ -81,7 +81,7 @@ async def get_animes(name, torrent, force=False):
             btns = []
             for qual in Var.QUALS:
                 filename = await aniInfo.get_upname(qual)
-                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</blockquote>")
+                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b></blockquote>\n\n<blockquote><b>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</b></blockquote>")
                 
                 await asleep(1.5)
                 await rep.report("𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝙴𝚗𝚌𝚘𝚍𝚎...", "𝙸𝚗𝚏𝚘")
@@ -94,7 +94,7 @@ async def get_animes(name, torrent, force=False):
                     return
                 await rep.report("𝚂𝚞𝚌𝚌𝚎𝚜𝚏𝚞𝚕𝚕𝚢 𝙲𝚘𝚖𝚙𝚛𝚎𝚜𝚜𝚎𝚍 𝙽𝚘𝚠 𝙶𝚘𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍...", "info")
                 
-                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{filename}</b></blockquote>\n\n<blockquote>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</blockquote>")
+                await editMessage(stat_msg, f"<blockquote>‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{filename}</b></blockquote>\n\n<blockquote><b>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝚈𝚘𝚞𝚛 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</b></blockquote>")
                 await asleep(1.5)
                 try:
                     msg = await TgUploader(stat_msg).upload(out_path, qual)
