@@ -11,10 +11,10 @@ from .func_utils import handle_logs
 from .reporter import rep
 
 CAPTION_FORMAT = """
-<b>㊂ <i>{title}</i></b>
+<b>㊂ {title}</b>
 <b>╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅</b>
-<b>⊙</b> <i>Genres:</i> <i>{genres}</i>
-<b>⊙</b> <i>Status:</i> <i>RELEASING</i> 
+<b>⊙</b> 𝙶𝚎𝚗𝚛𝚎𝚜:{genres}
+<b>⊙</b> 𝚂𝚝𝚊𝚝𝚞𝚜:𝚁𝚎𝚕𝚎𝚊𝚜𝚒𝚗𝚐
 <b>⊙</b> <i>Source:</i> <i>Subsplease</i>
 <b>⊙</b> <i>Episode:</i> <i>{ep_no}</i>
 <b>⊙</b> <i>Audio: Japanese</i>
