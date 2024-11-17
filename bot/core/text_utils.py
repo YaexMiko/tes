@@ -20,9 +20,9 @@ CAPTION_FORMAT = """
 <b>➥ </b> <b>𝙰𝚞𝚍𝚒𝚘 : 𝙹𝚊𝚙𝚊𝚗𝚎𝚜𝚎</b>
 <b>➥ </b> <b>𝚂𝚞𝚋𝚝𝚒𝚝𝚕𝚎 : 𝙴𝚗𝚐𝚕𝚒𝚜𝚑</b>
 <b>──────────────────────────</b>
-<blockquote>──────────────────────────
-➤  <b>𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢</b> ➤ </b><b>{cred}</b>
-──────────────────────────</blockquote>
+<b><blockquote>──────────────────────────
+➤  𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 ➤ {cred}
+──────────────────────────</blockquote></b>
 """
 
 GENRES_EMOJI = {"Action": "👊", "Adventure": choice(['🪂', '🧗‍♀']), "Comedy": "🤣", "Drama": " 🎭", "Ecchi": choice(['💋', '🥵']), "Fantasy": choice(['🧞', '🧞‍♂', '🧞‍♀','🌗']), "Hentai": "🔞", "Horror": "☠", "Mahou Shoujo": "☯", "Mecha": "🤖", "Music": "🎸", "Mystery": "🔮", "Psychological": "♟", "Romance": "💞", "Sci-Fi": "🛸", "Slice of Life": choice(['☘','🍁']), "Sports": "⚽️", "Supernatural": "🫧", "Thriller": choice(['🥶', '🔪','🤯'])}
