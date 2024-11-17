@@ -19,7 +19,7 @@ CAPTION_FORMAT = """
 ➥ 𝙴𝚙𝚒𝚜𝚘𝚍𝚎 : {ep_no}
 ➥ 𝙰𝚞𝚍𝚒𝚘 : 𝙹𝚊𝚙𝚊𝚗𝚎𝚜𝚎
 ➥ 𝚂𝚞𝚋𝚝𝚒𝚝𝚕𝚎 : 𝙴𝚗𝚐𝚕𝚒𝚜𝚑 </b>
-<blockquote>➤ <b> 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 ➤ {cred} </b></blockquote>
+<blockquote>➤ <b> 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢  {cred} </b></blockquote>
 <b>──────────────────────────</b>
 """
 
