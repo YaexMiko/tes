@@ -49,10 +49,10 @@ async def get_animes(name, torrent, force=False):
             or (ani_data and qual_data and not all(qual for qual in qual_data.values()))):
             
             if "[Batch]" in name:
-                await rep.report(f"Torrent Skipped!\n\n{name}", "warning")
+                await rep.report(f"𝚃𝚘𝚛𝚛𝚎𝚗𝚝 𝚂𝚔𝚒𝚙𝚙𝚎𝚍!\n\n{name}", "𝚆𝚊𝚛𝚗𝚒𝚗𝚐")
                 return
             
-            await rep.report(f"New Anime Torrent Found!\n\n{name}", "info")
+            await rep.report(f"𝙽𝚎𝚠 𝙰𝚗𝚒𝚖𝚎 𝚃𝚘𝚛𝚛𝚎𝚗𝚝 𝙵𝚘𝚞𝚗𝚍!\n\n{name}", "𝙸𝚗𝚏𝚘")
             post_msg = await bot.send_photo(
                 Var.MAIN_CHANNEL,
                 photo=await aniInfo.get_poster(),
@@ -61,10 +61,10 @@ async def get_animes(name, torrent, force=False):
             #post_msg = await sendMessage(Var.MAIN_CHANNEL, (await aniInfo.get_caption()).format(await aniInfo.get_poster()), invert_media=True)
             
             await asleep(1.5)
-            stat_msg = await sendMessage(Var.MAIN_CHANNEL, f"‣ <b>Anime Name :</b> <b><i>{name}</i></b>\n\n<i>Downloading...</i>")
+            stat_msg = await sendMessage(Var.MAIN_CHANNEL, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b><i>{name}</i></b>\n\n<i>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐...</i>")
             dl = await TorDownloader("./downloads").download(torrent, name)
             if not dl or not ospath.exists(dl):
-                await rep.report(f"File Download Incomplete, Try Again", "error")
+                await rep.report(f"𝙵𝚒𝚕𝚎 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙸𝚗𝚌𝚘𝚖𝚙𝚕𝚎𝚝𝚎, 𝚃𝚛𝚢 𝙰𝚐𝚊𝚒𝚗", "𝙴𝚛𝚛𝚘𝚛")
                 await stat_msg.delete()
                 return
 
@@ -72,8 +72,8 @@ async def get_animes(name, torrent, force=False):
             ffEvent = Event()
             ff_queued[post_id] = ffEvent
             if ffLock.locked():
-                await editMessage(stat_msg, f"‣ <b>Anime Name :</b> <b><i>{name}</i></b>\n\n<i>Queued to Encode...</i>")
-                await rep.report("Added Task to Queue...", "info")
+                await editMessage(stat_msg, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b><i>{name}</i></b>\n\n<i>𝚀𝚞𝚎𝚞𝚎𝚍 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎...</i>")
+                await rep.report("𝙰𝚍𝚍𝚎𝚍 𝚃𝚊𝚜𝚔 𝚃𝚘 𝚀𝚞𝚎𝚞𝚎...", "𝙸𝚗𝚏𝚘")
             await ffQueue.put(post_id)
             await ffEvent.wait()
             
@@ -81,29 +81,29 @@ async def get_animes(name, torrent, force=False):
             btns = []
             for qual in Var.QUALS:
                 filename = await aniInfo.get_upname(qual)
-                await editMessage(stat_msg, f"‣ <b>Anime Name :</b> <b><i>{name}</i></b>\n\n<i>Ready to Encode...</i>")
+                await editMessage(stat_msg, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b><i>{name}</i></b>\n\n<i>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</i>")
                 
                 await asleep(1.5)
-                await rep.report("Starting Encode...", "info")
+                await rep.report("𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝙴𝚗𝚌𝚘𝚍𝚎...", "𝙸𝚗𝚏𝚘")
                 try:
                     out_path = await FFEncoder(stat_msg, dl, filename, qual).start_encode()
                 except Exception as e:
-                    await rep.report(f"Error: {e}, Cancelled,  Retry Again !", "error")
+                    await rep.report(f"𝙴𝚛𝚛𝚘𝚛: {e}, 𝙲𝚊𝚗𝚌𝚕𝚕𝚎𝚍,  𝚁𝚎𝚝𝚛𝚢 𝙰𝚐𝚊𝚒𝚗 !", "𝙴𝚛𝚛𝚘𝚛")
                     await stat_msg.delete()
                     ffLock.release()
                     return
-                await rep.report("Succesfully Compressed Now Going To Upload...", "info")
+                await rep.report("𝚂𝚞𝚌𝚌𝚎𝚜𝚏𝚞𝚕𝚕𝚢 𝙲𝚘𝚖𝚙𝚛𝚎𝚜𝚜𝚎𝚍 𝙽𝚘𝚠 𝙶𝚘𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍...", "info")
                 
-                await editMessage(stat_msg, f"‣ <b>Anime Name :</b> <b><i>{filename}</i></b>\n\n<i>Ready to Upload...</i>")
+                await editMessage(stat_msg, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b><i>{filename}</i></b>\n\n<i>𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍...</i>")
                 await asleep(1.5)
                 try:
                     msg = await TgUploader(stat_msg).upload(out_path, qual)
                 except Exception as e:
-                    await rep.report(f"Error: {e}, Cancelled,  Retry Again !", "error")
+                    await rep.report(f"𝙴𝚛𝚛𝚘𝚛: {e}, 𝙲𝚊𝚗𝚌𝚕𝚕𝚎𝚍,  𝚁𝚎𝚝𝚛𝚢 𝙰𝚐𝚊𝚒𝚗 !", "𝙴𝚛𝚛𝚘𝚛")
                     await stat_msg.delete()
                     ffLock.release()
                     return
-                await rep.report("Succesfully Uploaded File into Tg...", "info")
+                await rep.report("𝚂𝚞𝚌𝚌𝚎𝚜𝚏𝚞𝚕𝚕𝚢 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙵𝚒𝚕𝚎 𝙸𝚗𝚝𝚘 𝚃𝚐...", "info")
                 
                 msg_id = msg.id
                 link = f"https://telegram.me/{(await bot.get_me()).username}?start={await encode('get-'+str(msg_id * abs(Var.FILE_STORE)))}"
