@@ -141,19 +141,19 @@ async def is_fsubbed(uid):
     return True
         
 async def get_fsubs(uid, txtargs):
-    txt = "<b><i>Please Join Following Channels to Use this Bot!</i></b>\n\n"
+    txt = "<b>𝙿𝚕𝚎𝚊𝚜𝚎 𝙹𝚘𝚒𝚗 𝙵𝚘𝚕𝚕𝚘𝚠𝚒𝚗𝚐 𝙲𝚑𝚊𝚗𝚗𝚎𝚕𝚜 𝚃𝚘 𝚄𝚜𝚎 𝚃𝚑𝚒𝚜 𝙱𝚘𝚝!</b>\n\n"
     btns = []
     for no, chat in enumerate(Var.FSUB_CHATS, start=1):
         try:
             cha = await bot.get_chat(chat)
             member = await bot.get_chat_member(chat_id=chat, user_id=uid)
-            sta = "Joined ✅️"
+            sta = "𝚈𝚘𝚞 𝙹𝚘𝚒𝚗𝚎𝚍 𝚃𝚑𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ✅️"
         except UserNotParticipant:
-            sta = "Not Joined ❌️"
+            sta = "𝚈𝚘𝚞 𝙳𝚒𝚍 𝙽𝚘𝚝 𝙹𝚘𝚒𝚗 𝙾𝚞𝚛 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ❌️"
             inv = await bot.create_chat_invite_link(chat_id=chat)
             btns.append([InlineKeyboardButton(cha.title, url=inv.invite_link)])
         except Exception as err:
-            await rep.report(format_exc(), "warning")
+            await rep.report(format_exc(), "𝚆𝚊𝚛𝚗𝚒𝚗𝚐")
             continue
         txt += f"<b>{no}. Title :</b> <i>{cha.title}</i>\n  <b>Status :</b> <i>{sta}</i>\n\n"
     if len(txtargs) > 1:
