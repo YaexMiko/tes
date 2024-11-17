@@ -72,7 +72,7 @@ async def get_animes(name, torrent, force=False):
             ffEvent = Event()
             ff_queued[post_id] = ffEvent
             if ffLock.locked():
-                await editMessage(stat_msg, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b>\n\n𝚀𝚞𝚎𝚞𝚎𝚍 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎...")
+                await editMessage(stat_msg, f"‣ <blockquote><b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b>\n\n𝚀𝚞𝚎𝚞𝚎𝚍 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎...</blockquote>")
                 await rep.report("𝙰𝚍𝚍𝚎𝚍 𝚃𝚊𝚜𝚔 𝚃𝚘 𝚀𝚞𝚎𝚞𝚎...", "𝙸𝚗𝚏𝚘")
             await ffQueue.put(post_id)
             await ffEvent.wait()
@@ -81,7 +81,7 @@ async def get_animes(name, torrent, force=False):
             btns = []
             for qual in Var.QUALS:
                 filename = await aniInfo.get_upname(qual)
-                await editMessage(stat_msg, f"‣ <b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b>\n\n𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...")
+                await editMessage(stat_msg, f"‣ <blockquote><b>𝙰𝚗𝚒𝚖𝚎 𝙽𝚊𝚖𝚎 :</b> <b>{name}</b>\n\n𝚁𝚎𝚊𝚍𝚢 𝚃𝚘 𝙴𝚗𝚌𝚘𝚍𝚎 𝙴𝚙𝚒𝚜𝚘𝚍𝚎...</blockquote>")
                 
                 await asleep(1.5)
                 await rep.report("𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝙴𝚗𝚌𝚘𝚍𝚎...", "𝙸𝚗𝚏𝚘")
