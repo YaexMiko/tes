@@ -147,15 +147,15 @@ async def get_fsubs(uid, txtargs):
         try:
             cha = await bot.get_chat(chat)
             member = await bot.get_chat_member(chat_id=chat, user_id=uid)
-            sta = "𝚈𝚘𝚞 𝙹𝚘𝚒𝚗𝚎𝚍 𝚃𝚑𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ✅️"
+            sta = "<blockquote>𝚈𝚘𝚞 𝙹𝚘𝚒𝚗𝚎𝚍 𝚃𝚑𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ✅️</blockquote>"
         except UserNotParticipant:
-            sta = "𝚈𝚘𝚞 𝙳𝚒𝚍 𝙽𝚘𝚝 𝙹𝚘𝚒𝚗 𝙾𝚞𝚛 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ❌️"
+            sta = "<blockquote>𝚈𝚘𝚞 𝙳𝚒𝚍 𝙽𝚘𝚝 𝙹𝚘𝚒𝚗 𝙾𝚞𝚛 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 ❌️</blockquote>"
             inv = await bot.create_chat_invite_link(chat_id=chat)
             btns.append([InlineKeyboardButton(cha.title, url=inv.invite_link)])
         except Exception as err:
             await rep.report(format_exc(), "𝚆𝚊𝚛𝚗𝚒𝚗𝚐")
             continue
-        txt += f"<b>{no}. Title :</b> <i>{cha.title}</i>\n  <b>Status :</b> <i>{sta}</i>\n\n"
+        txt += f"<b>{no}. Title :</b> {cha.title}\n  <b>Status :</b> {sta}\n\n"
     if len(txtargs) > 1:
         btns.append([InlineKeyboardButton('🗂 Get Files', url=f'https://t.me/{(await bot.get_me()).username}?start={txtargs[1]}')])
     return txt, btns
