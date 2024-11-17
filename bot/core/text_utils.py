@@ -11,18 +11,16 @@ from .func_utils import handle_logs
 from .reporter import rep
 
 CAPTION_FORMAT = """
-<blockquote> <b>➤ {title}</b> 
-<b>──────────────────────────</b> </blockquote>
-<b>➥ </b> <b>𝙶𝚎𝚗𝚛𝚎𝚜 : {genres}</b>
-<b>➥ </b> <b>𝚂𝚝𝚊𝚝𝚞𝚜 : 𝚁𝚎𝚕𝚎𝚊𝚜𝚒𝚗𝚐</b>
-<b>➥ </b> <b>𝚂𝚘𝚞𝚛𝚌𝚎 : 𝚂𝚞𝚋𝚜𝚙𝚕𝚎𝚊𝚜𝚎</b>
-<b>➥ </b> <b>𝙴𝚙𝚒𝚜𝚘𝚍𝚎 : {ep_no}</b>
-<b>➥ </b> <b>𝙰𝚞𝚍𝚒𝚘 : 𝙹𝚊𝚙𝚊𝚗𝚎𝚜𝚎</b>
-<b>➥ </b> <b>𝚂𝚞𝚋𝚝𝚒𝚝𝚕𝚎 : 𝙴𝚗𝚐𝚕𝚒𝚜𝚑</b>
+<blockquote><b>➤ {title} </b> </blockquote>
+<b>────────────────────────── 
+➥ 𝙶𝚎𝚗𝚛𝚎𝚜 : {genres}
+➥ 𝚂𝚝𝚊𝚝𝚞𝚜 : 𝚁𝚎𝚕𝚎𝚊𝚜𝚒𝚗𝚐
+➥ 𝚂𝚘𝚞𝚛𝚌𝚎 : 𝚂𝚞𝚋𝚜𝚙𝚕𝚎𝚊𝚜𝚎
+➥ 𝙴𝚙𝚒𝚜𝚘𝚍𝚎 : {ep_no}
+➥ 𝙰𝚞𝚍𝚒𝚘 : 𝙹𝚊𝚙𝚊𝚗𝚎𝚜𝚎
+➥ 𝚂𝚞𝚋𝚝𝚒𝚝𝚕𝚎 : 𝙴𝚗𝚐𝚕𝚒𝚜𝚑 </b>
+<blockquote>➤ <b> 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 ➤ {cred} </b></blockquote>
 <b>──────────────────────────</b>
-<b><blockquote>──────────────────────────
-➤  𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 ➤ {cred}
-──────────────────────────</blockquote></b>
 """
 
 GENRES_EMOJI = {"Action": "👊", "Adventure": choice(['🪂', '🧗‍♀']), "Comedy": "🤣", "Drama": " 🎭", "Ecchi": choice(['💋', '🥵']), "Fantasy": choice(['🧞', '🧞‍♂', '🧞‍♀','🌗']), "Hentai": "🔞", "Horror": "☠", "Mahou Shoujo": "☯", "Mecha": "🤖", "Music": "🎸", "Mystery": "🔮", "Psychological": "♟", "Romance": "💞", "Sci-Fi": "🛸", "Slice of Life": choice(['☘','🍁']), "Sports": "⚽️", "Supernatural": "🫧", "Thriller": choice(['🥶', '🔪','🤯'])}
